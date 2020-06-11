@@ -1,5 +1,9 @@
 import app from './app';
 
-app.listen(3333);
+const PORT = process.env.PORT || 3333;
 
-console.log('\nApi runnung in: http://localhost:3333/');
+app.listen(PORT, (err) => {
+  if (err) throw err;
+
+  console.log(`\nApi runnung in: http://localhost:${PORT}/`);
+});
